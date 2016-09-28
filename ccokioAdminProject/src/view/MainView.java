@@ -51,7 +51,7 @@ public class MainView {
 			} else if(selectedMenu == 3) {
 				
 			} else if(selectedMenu == 4) {
-				
+				Controllers.getManagerController().requestSelectList();
 			} else if(selectedMenu == 5) {
 
 			} else if(selectedMenu == 6) {

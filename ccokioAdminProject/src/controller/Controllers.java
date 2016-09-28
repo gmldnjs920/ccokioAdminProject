@@ -7,6 +7,7 @@ public class Controllers {
 	private static LoginController loginController;
 	private static ProductController productController;
 	private static UserController userController;
+	private static ManagerController managerController;
 
 	public Controllers() {
 
@@ -15,6 +16,7 @@ public class Controllers {
 		loginController = new LoginController();
 		productController = new ProductController();
 		userController = new UserController();
+		managerController = new ManagerController();
 
 	}
 
@@ -37,6 +39,10 @@ public class Controllers {
 
 	public static UserController getUserController() {
 		return userController;
+	}
+
+	public static ManagerController getManagerController() {
+		return managerController;
 	}
 	
 	
