@@ -48,8 +48,10 @@ public class ManagerSelectOneView {
 
 			switch(selectedMenu) {
 			case 1:
+				Controllers.getManagerController().requestUpdate(searchManager.getManagerNumber());
 				break;
 			case 2:
+				Controllers.getManagerController().requestDelete(searchManager.getManagerNumber());
 				break;
 			case 3:
 				Controllers.getManagerController().requestSelectList();
