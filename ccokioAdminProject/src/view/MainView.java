@@ -49,7 +49,7 @@ public class MainView {
 			} else if(selectedMenu == 2) {
 				Controllers.getUserController().requestSelectList();
 			} else if(selectedMenu == 3) {
-				
+				Controllers.getNonUserController().requestSelectList();
 			} else if(selectedMenu == 4) {
 				Controllers.getManagerController().requestSelectList();
 			} else if(selectedMenu == 5) {
@@ -83,7 +83,7 @@ public class MainView {
 			} else if(selectedMenu == 2) {
 				Controllers.getUserController().requestSelectList();
 			} else if(selectedMenu == 3) {
-
+				Controllers.getNonUserController().requestSelectList();
 			} else if(selectedMenu == 4) {
 				Controllers.getLoginController().requestLogout();
 			} else if(selectedMenu == 0) {

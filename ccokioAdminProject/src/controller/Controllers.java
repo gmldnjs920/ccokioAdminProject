@@ -11,15 +11,18 @@ public class Controllers {
 	private static TotalPaymentController totalPaymentController;
 	
 	
-	
-	
 
+
+	private static NonUserController nonUserController;
+	private static NonUserOrderController nonUserOrderController;
+	private static NonUserPaymentController nonUserPaymentController;
 	private static UserOrderController userOrderController;
 	private static UserPaymentController   userPaymentController;
 
 	
 	
 	
+
 	public Controllers() {
 
 		programController = new ProgramController();
@@ -32,10 +35,15 @@ public class Controllers {
 		
 		
 		
+
 		
+		nonUserController = new NonUserController();
+		nonUserOrderController = new NonUserOrderController();
+		nonUserPaymentController = new NonUserPaymentController();
 
 		userOrderController = new UserOrderController();
 		userPaymentController = new UserPaymentController();
+
 	}
 
 	
@@ -77,6 +85,39 @@ public class Controllers {
 		return totalPaymentController;
 	}
 
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	public static NonUserController getNonUserController() {
+		return nonUserController;
+	}
+
+
+
+
+	public static NonUserOrderController getNonUserOrderController() {
+		return nonUserOrderController;
+	}
+
+
+
+
+	public static NonUserPaymentController getNonUserPaymentController() {
+		return nonUserPaymentController;
+	}
+
+
+
+	
 }
 
 
