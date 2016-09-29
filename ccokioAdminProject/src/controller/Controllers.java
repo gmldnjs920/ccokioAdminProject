@@ -14,6 +14,12 @@ public class Controllers {
 	
 	
 
+	private static UserOrderController userOrderController;
+	private static UserPaymentController   userPaymentController;
+
+	
+	
+	
 	public Controllers() {
 
 		programController = new ProgramController();
@@ -28,8 +34,13 @@ public class Controllers {
 		
 		
 
+		userOrderController = new UserOrderController();
+		userPaymentController = new UserPaymentController();
 	}
 
+	
+	
+	
 	public static ProgramController getProgramController() {
 		return programController;
 		
@@ -55,13 +66,17 @@ public class Controllers {
 		return managerController;
 	}
 
+	public static UserOrderController getUserOrderController() {
+		return userOrderController;
+	}
+
+	public static UserPaymentController getUserPaymentController() {
+		return userPaymentController;
+	}
 	public static TotalPaymentController getTotalPaymentController() {
 		return totalPaymentController;
 	}
-	
-	
-	
-	
-	
 
 }
+
+
