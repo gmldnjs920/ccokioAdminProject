@@ -18,7 +18,7 @@ public class TotalPaymentSelectListView {
 
 		int sumPrice = 0;
 		System.out.println("\n[총 결제내역 목록 보기 모드]");
-		System.out.println("아이디\t이름\t전화번호\t상품이름\t상품가격\t수량\t합계금액");
+		System.out.println("아이디\t이름\t전화번호\t제품이름\t제품가격\t수량\t합계금액");
 		if(totalPaymentList.size() == 0) {
 			System.out.println("결제내역이 없습니다.");
 		} else {
@@ -70,7 +70,7 @@ public class TotalPaymentSelectListView {
 
 		int sumPrice = 0;
 		System.out.println("\n[회원 결제내역 목록 보기 모드]");
-		System.out.println("아이디\t이름\t전화번호\t상품이름\t상품가격\t수량\t합계금액");
+		System.out.println("아이디\t이름\t전화번호\t제품이름\t제품가격\t수량\t합계금액");
 		if(totalPaymentList.size() == 0) {
 			System.out.println("결제내역이 없습니다.");
 		} else {
@@ -117,7 +117,7 @@ public class TotalPaymentSelectListView {
 
 		int sumPrice = 0;
 		System.out.println("\n[비회원 결제내역 목록 보기 모드]");
-		System.out.println("이름\t전화번호\t상품이름\t상품가격\t수량\t합계금액");
+		System.out.println("이름\t전화번호\t제품이름\t제품가격\t수량\t합계금액");
 		if(totalPaymentList.size() == 0) {
 			System.out.println("결제내역이 없습니다.");
 		} else {

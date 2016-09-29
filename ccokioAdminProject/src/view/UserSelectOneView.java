@@ -52,8 +52,10 @@ public class UserSelectOneView {
 
 			switch(selectedMenu) {
 			case 1:
+				Controllers.getUserOrderController().requestUserOrderList(searchUser);
 				break;
 			case 2:
+				Controllers.getUserPaymentController().requestPaymentList(searchUser);
 				break;
 			case 3:
 				Controllers.getUserController().requestSelectList();

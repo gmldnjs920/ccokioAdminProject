@@ -12,8 +12,17 @@ public class Controllers {
 	
 	
 
+<<<<<<< HEAD
 	private static NonUserController nonUserController;
 	private static OrderController2 orderController;
+=======
+	private static UserOrderController userOrderController;
+	private static UserPaymentController   userPaymentController;
+
+	
+	
+	
+>>>>>>> refs/remotes/comstory11/master
 	public Controllers() {
 
 		programController = new ProgramController();
@@ -26,10 +35,20 @@ public class Controllers {
 		
 		
 		
+<<<<<<< HEAD
 		orderController = new OrderController2();
 		nonUserController = new NonUserController();
+=======
+		
+
+		userOrderController = new UserOrderController();
+		userPaymentController = new UserPaymentController();
+>>>>>>> refs/remotes/comstory11/master
 	}
 
+	
+	
+	
 	public static ProgramController getProgramController() {
 		return programController;
 		
@@ -55,9 +74,17 @@ public class Controllers {
 		return managerController;
 	}
 
+	public static UserOrderController getUserOrderController() {
+		return userOrderController;
+	}
+
+	public static UserPaymentController getUserPaymentController() {
+		return userPaymentController;
+	}
 	public static TotalPaymentController getTotalPaymentController() {
 		return totalPaymentController;
 	}
+<<<<<<< HEAD
 
 	
 	
@@ -73,6 +100,8 @@ public class Controllers {
 	public static NonUserController getNonUserController() {
 		return nonUserController;
 	}
+=======
+>>>>>>> refs/remotes/comstory11/master
 
 	public static OrderController2 getOrderController() {
 		return orderController;
@@ -83,3 +112,5 @@ public class Controllers {
 	}
 	
 }
+
+
