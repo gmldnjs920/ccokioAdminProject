@@ -11,9 +11,9 @@ public class Controllers {
 	private static TotalPaymentController totalPaymentController;
 	
 	
-	
-	
 
+	private static NonUserController nonUserController;
+	private static OrderController2 orderController;
 	public Controllers() {
 
 		programController = new ProgramController();
@@ -26,8 +26,8 @@ public class Controllers {
 		
 		
 		
-		
-
+		orderController = new OrderController2();
+		nonUserController = new NonUserController();
 	}
 
 	public static ProgramController getProgramController() {
@@ -58,10 +58,28 @@ public class Controllers {
 	public static TotalPaymentController getTotalPaymentController() {
 		return totalPaymentController;
 	}
+
+	
 	
 	
 	
 	
 	
 
+	
+	
+	
+	
+	public static NonUserController getNonUserController() {
+		return nonUserController;
+	}
+
+	public static OrderController2 getOrderController() {
+		return orderController;
+	}
+
+	public static void setOrderController(OrderController2 orderController) {
+		Controllers.orderController = orderController;
+	}
+	
 }
