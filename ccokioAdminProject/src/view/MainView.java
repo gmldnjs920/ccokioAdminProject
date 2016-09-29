@@ -53,7 +53,7 @@ public class MainView {
 			} else if(selectedMenu == 4) {
 				Controllers.getManagerController().requestSelectList();
 			} else if(selectedMenu == 5) {
-
+				Controllers.getTotalPaymentController().requestSelectList();
 			} else if(selectedMenu == 6) {
 				Controllers.getLoginController().requestLogout();
 			} else if(selectedMenu == 0) {

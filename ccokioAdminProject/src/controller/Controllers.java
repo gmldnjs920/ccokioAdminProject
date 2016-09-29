@@ -8,6 +8,11 @@ public class Controllers {
 	private static ProductController productController;
 	private static UserController userController;
 	private static ManagerController managerController;
+	private static TotalPaymentController totalPaymentController;
+	
+	
+	
+	
 
 	private static UserOrderController userOrderController;
 	private static UserPaymentController   userPaymentController;
@@ -23,6 +28,11 @@ public class Controllers {
 		productController = new ProductController();
 		userController = new UserController();
 		managerController = new ManagerController();
+		totalPaymentController = new TotalPaymentController();
+		
+		
+		
+		
 
 		userOrderController = new UserOrderController();
 		userPaymentController = new UserPaymentController();
@@ -56,6 +66,7 @@ public class Controllers {
 		return managerController;
 	}
 
+<<<<<<< HEAD
 
 
 
@@ -66,6 +77,15 @@ public class Controllers {
 	public static UserPaymentController getUserPaymentController() {
 		return userPaymentController;
 	}
+=======
+	public static TotalPaymentController getTotalPaymentController() {
+		return totalPaymentController;
+	}
+	
+	
+	
+	
+>>>>>>> refs/remotes/origin/master
 	
 
 }
