@@ -106,6 +106,8 @@ public class ProductDao {
 			pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 			pstmt.setString(1, newProduct.getProductName());
 			rs = pstmt.executeQuery();
+			
+			
 
 			if(rs.next()){
 
