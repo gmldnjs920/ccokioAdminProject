@@ -33,7 +33,7 @@ public class MainView {
 
 		while(true) {
 			System.out.println("\n[관리자 모드]");
-			System.out.println("[1. 메뉴 관리]");
+			System.out.println("[1. 제품 관리]");
 			System.out.println("[2. 회원 관리]");
 			System.out.println("[3. 비회원 관리]");
 			System.out.println("[4. 매니저 관리]");
@@ -70,7 +70,7 @@ public class MainView {
 
 		while(true) {
 			System.out.println("\n[매니저 모드]");
-			System.out.println("[1. 메뉴 관리]");
+			System.out.println("[1. 제품 관리]");
 			System.out.println("[2. 회원 관리]");
 			System.out.println("[3. 비회원 관리]");
 			System.out.println("[4. 로그 아웃]");

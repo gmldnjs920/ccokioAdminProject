@@ -20,9 +20,8 @@ public class ProductDao {
 
 		try{
 			stmt = Controllers.getProgramController().getConnection().createStatement();
-			String sql = "select * from product";
+			String sql = "select * from system.product";
 			rs = stmt.executeQuery(sql);
-
 			while(rs.next()){
 
 				Product product = new Product();
@@ -56,7 +55,7 @@ public class ProductDao {
 
 		try {
 			
-			String sql = "select * from product where productNumber = ?";
+			String sql = "select * from system.product where productNumber = ?";
 			pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 			pstmt.setInt(1, selectedProductNumber);
 			rs = pstmt.executeQuery();
@@ -86,14 +85,28 @@ public class ProductDao {
 		PreparedStatement pstmt2 = null;
 		ResultSet rs = null;
 		ResultSet rs2 = null;
+		int nextProductNumber = 0;
 
 		try {
+			
+			String sql = "select max(productNumber) + 1 as maxProductNumber from system.product";
+			stmt = Controllers.getProgramController().getConnection().createStatement();
+			rs = stmt.executeQuery(sql);
 
-			String sql = "select * from product where productName = ?";
+			if(rs.next()) {
+				nextProductNumber = rs.getInt("maxProductNumber");
+				if(rs.wasNull()) { //최초로 제품을 등록할 때
+					nextProductNumber = 1;
+				}
+			}
+
+			newProduct.setProductNumber(nextProductNumber);
+
+			sql = "select * from system.product where productName = ?";
 			pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 			pstmt.setString(1, newProduct.getProductName());
 			rs = pstmt.executeQuery();
-
+			
 			if(rs.next()){
 
 				return success;
@@ -101,12 +114,13 @@ public class ProductDao {
 			} else {
 
 
-				sql = "insert into product values(Product_ProductNumber_seq.nextval,?,?,?,?)";
+				sql = "insert into system.product values(?,?,?,?,?)";
 				pstmt2 = Controllers.getProgramController().getConnection().prepareStatement(sql);
-				pstmt2.setString(1, newProduct.getProductName());
-				pstmt2.setInt(2, newProduct.getProductPrice());
-				pstmt2.setString(3, newProduct.getProductCommant());
-				pstmt2.setString(4, newProduct.getProductOrigin());
+				pstmt2.setInt(1, newProduct.getProductNumber());
+				pstmt2.setString(2, newProduct.getProductName());
+				pstmt2.setInt(3, newProduct.getProductPrice());
+				pstmt2.setString(4, newProduct.getProductCommant());
+				pstmt2.setString(5, newProduct.getProductOrigin());
 				pstmt2.executeUpdate();
 				success = true;
 
@@ -137,7 +151,7 @@ public class ProductDao {
 
 		try {
 
-			String sql = "select * from product where productNumber = ?";
+			String sql = "select * from system.product where productNumber = ?";
 			pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 			pstmt.setInt(1, searchProductNumber);
 			rs = pstmt.executeQuery();
@@ -180,7 +194,7 @@ public class ProductDao {
 
 			if(selectedMenu == 1) {
 
-				sql = "update product set productName = ? where productNumber = ?";
+				sql = "update system.product set productName = ? where productNumber = ?";
 				pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 				pstmt.setString(1, searchProduct.getProductName());
 				pstmt.setInt(2, searchProduct.getProductNumber());
@@ -188,21 +202,21 @@ public class ProductDao {
 
 			} else if(selectedMenu == 2) {
 
-				sql = "update product set productPrice = ? where productNumber = ?";
+				sql = "update system.product set productPrice = ? where productNumber = ?";
 				pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 				pstmt.setInt(1, searchProduct.getProductPrice());
 				pstmt.setInt(2, searchProduct.getProductNumber());
 				result = pstmt.executeUpdate();
 			} else if(selectedMenu == 3) {
 
-				sql = "update product set productCommant = ? where productNumber = ?";
+				sql = "update system.product set productCommant = ? where productNumber = ?";
 				pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 				pstmt.setString(1, searchProduct.getProductCommant());
 				pstmt.setInt(2, searchProduct.getProductNumber());
 				result = pstmt.executeUpdate();
 			} else if(selectedMenu == 4) {
 
-				sql = "update product set productOrigin = ? where productNumber = ?";
+				sql = "update system.product set productOrigin = ? where productNumber = ?";
 				pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 				pstmt.setString(1, searchProduct.getProductOrigin());
 				pstmt.setInt(2, searchProduct.getProductNumber());
@@ -266,7 +280,7 @@ public class ProductDao {
 
 		try {
 
-			String sql = "delete from Product where productNumber = ?";
+			String sql = "delete from system.Product where productNumber = ?";
 			pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 			pstmt.setInt(1, searchProductNumber);
 			result = pstmt.executeUpdate();
