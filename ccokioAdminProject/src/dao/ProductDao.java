@@ -107,8 +107,6 @@ public class ProductDao {
 			pstmt.setString(1, newProduct.getProductName());
 			rs = pstmt.executeQuery();
 			
-			
-
 			if(rs.next()){
 
 				return success;
