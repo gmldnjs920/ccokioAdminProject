@@ -66,10 +66,6 @@ public class Controllers {
 		return managerController;
 	}
 
-<<<<<<< HEAD
-
-
-
 	public static UserOrderController getUserOrderController() {
 		return userOrderController;
 	}
@@ -77,16 +73,9 @@ public class Controllers {
 	public static UserPaymentController getUserPaymentController() {
 		return userPaymentController;
 	}
-=======
 	public static TotalPaymentController getTotalPaymentController() {
 		return totalPaymentController;
 	}
-	
-	
-	
-	
->>>>>>> refs/remotes/origin/master
-	
 
 }
 
