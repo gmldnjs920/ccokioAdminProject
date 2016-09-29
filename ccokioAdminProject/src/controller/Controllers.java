@@ -9,6 +9,12 @@ public class Controllers {
 	private static UserController userController;
 	private static ManagerController managerController;
 
+	private static UserOrderController userOrderController;
+	private static UserPaymentController   userPaymentController;
+
+	
+	
+	
 	public Controllers() {
 
 		programController = new ProgramController();
@@ -18,8 +24,13 @@ public class Controllers {
 		userController = new UserController();
 		managerController = new ManagerController();
 
+		userOrderController = new UserOrderController();
+		userPaymentController = new UserPaymentController();
 	}
 
+	
+	
+	
 	public static ProgramController getProgramController() {
 		return programController;
 		
@@ -44,9 +55,19 @@ public class Controllers {
 	public static ManagerController getManagerController() {
 		return managerController;
 	}
-	
-	
-	
+
+
+
+
+	public static UserOrderController getUserOrderController() {
+		return userOrderController;
+	}
+
+	public static UserPaymentController getUserPaymentController() {
+		return userPaymentController;
+	}
 	
 
 }
+
+

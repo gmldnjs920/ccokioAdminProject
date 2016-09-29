@@ -66,9 +66,7 @@ public class UserController {
 		UserSelectOneView userSelectOneView = new UserSelectOneView();
 		userSelectOneView.userSelectOneMenu(searchUser);
 
-
 	}
-
 
 	public void requestDeleteSearchNumber() {
 

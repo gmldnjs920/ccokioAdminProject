@@ -52,6 +52,7 @@ public class UserSelectOneView {
 
 			switch(selectedMenu) {
 			case 1:
+				Controllers.getUserOrderController().requestOrderList();
 				break;
 			case 2:
 				break;
