@@ -2,26 +2,34 @@ package controller;
 
 import java.util.ArrayList;
 
-import dao.PaymentDao;
-import domain.Payment;
-import view.PaymentListView;
+import dao.UserPaymentDao;
+import domain.User;
+import domain.UserPayment;
+import view.UserPaymentListView;
 
 public class UserPaymentController {
 
-	PaymentDao paymentDao;
+	UserPaymentDao userPaymentDao;
 	
 	public UserPaymentController() {
 	
-		paymentDao = new PaymentDao();
+		userPaymentDao = new UserPaymentDao();
 		
 	}
 	
-	public void requestPaymentList() {
+	public void requestPaymentList(User searchUser) {
 		
-		ArrayList<Payment> payments = paymentDao.paymentList();
+		ArrayList<UserPayment> userPaymentList = userPaymentDao.userPaymentList(searchUser);
 		
-		PaymentListView paymentListView = new PaymentListView();
-		paymentListView.paymentList(payments);
+		UserPaymentListView userPaymentListView = new UserPaymentListView();
+		userPaymentListView.userPaymentList(userPaymentList);
+		
+	}
+
+	public void requestPaymentMenuList() {
+		
+		UserPaymentListView userPaymentListView = new UserPaymentListView();
+		userPaymentListView.userPaymentMenuList();
 		
 	}
 	

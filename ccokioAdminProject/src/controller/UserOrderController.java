@@ -2,26 +2,34 @@ package controller;
 
 import java.util.ArrayList;
 
-import dao.OrderDao;
-import domain.Order;
-import view.OrderListView;
+import dao.UserOrderDao;
+import domain.UserOrder;
+import domain.User;
+import view.UserOrderListView;
 
 public class UserOrderController {
 
-	OrderDao orderDao;
+	UserOrderDao userOrderDao;
 	
 	public UserOrderController() {
 	
-		orderDao = new OrderDao();
+		userOrderDao = new UserOrderDao();
 		
 	}
 	
-	public void requestOrderList() {
+	public void requestUserOrderList(User searchUser) {
 		
-		ArrayList<Order> orderList = orderDao.orderList();
+		ArrayList<UserOrder> userOrderList = userOrderDao.orderList(searchUser);
 		
-		OrderListView orderListView = new OrderListView();
-		orderListView.orderList(orderList);
+		UserOrderListView userOrderListView = new UserOrderListView();
+		userOrderListView.userOrderList(userOrderList);
+		
+	}
+
+	public void requestUserOrderMenuList() {
+		
+		UserOrderListView userOrderListView = new UserOrderListView();
+		userOrderListView.userOrderMenuList();
 		
 	}
 	
