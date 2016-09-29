@@ -46,13 +46,13 @@ public class NonUserSelectOneView {
 
 			switch(selectedMenu) {
 			case 1:
-				Controllers.getOrderController().requestOrderSelectList(searchNonUser);
+				Controllers.getNonUserOrderController().requestNonUserOrderList(searchNonUser);
 				break;
 			case 2:
-				
+				Controllers.getNonUserPaymentController().requestPaymentList(searchNonUser);
 				break;
 			case 3:
-				Controllers.getNonUserController().requestSelectList();
+				Controllers.getNonUserController().requestNonUserSelectMenuList();
 				break;
 			default :
 				System.out.println("메뉴를 다시 선택해주세요.");

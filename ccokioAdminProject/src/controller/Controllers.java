@@ -12,17 +12,17 @@ public class Controllers {
 	
 	
 
-<<<<<<< HEAD
+
 	private static NonUserController nonUserController;
-	private static OrderController2 orderController;
-=======
+	private static NonUserOrderController nonUserOrderController;
+	private static NonUserPaymentController nonUserPaymentController;
 	private static UserOrderController userOrderController;
 	private static UserPaymentController   userPaymentController;
 
 	
 	
 	
->>>>>>> refs/remotes/comstory11/master
+
 	public Controllers() {
 
 		programController = new ProgramController();
@@ -35,15 +35,15 @@ public class Controllers {
 		
 		
 		
-<<<<<<< HEAD
-		orderController = new OrderController2();
-		nonUserController = new NonUserController();
-=======
+
 		
+		nonUserController = new NonUserController();
+		nonUserOrderController = new NonUserOrderController();
+		nonUserPaymentController = new NonUserPaymentController();
 
 		userOrderController = new UserOrderController();
 		userPaymentController = new UserPaymentController();
->>>>>>> refs/remotes/comstory11/master
+
 	}
 
 	
@@ -84,7 +84,7 @@ public class Controllers {
 	public static TotalPaymentController getTotalPaymentController() {
 		return totalPaymentController;
 	}
-<<<<<<< HEAD
+
 
 	
 	
@@ -100,16 +100,23 @@ public class Controllers {
 	public static NonUserController getNonUserController() {
 		return nonUserController;
 	}
-=======
->>>>>>> refs/remotes/comstory11/master
 
-	public static OrderController2 getOrderController() {
-		return orderController;
+
+
+
+	public static NonUserOrderController getNonUserOrderController() {
+		return nonUserOrderController;
 	}
 
-	public static void setOrderController(OrderController2 orderController) {
-		Controllers.orderController = orderController;
+
+
+
+	public static NonUserPaymentController getNonUserPaymentController() {
+		return nonUserPaymentController;
 	}
+
+
+
 	
 }
 
