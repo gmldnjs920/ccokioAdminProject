@@ -45,7 +45,7 @@ public class MainView {
 			int selectedMenu = keyboard.nextInt();
 
 			if(selectedMenu == 1) {
-
+				Controllers.getProductController().requestProductSelectList();
 			} else if(selectedMenu == 2) {
 				Controllers.getUserController().requestSelectList();
 			} else if(selectedMenu == 3) {
@@ -79,7 +79,7 @@ public class MainView {
 			int selectedMenu = keyboard.nextInt();
 
 			if(selectedMenu == 1) {
-
+				Controllers.getProductController().requestProductSelectList();
 			} else if(selectedMenu == 2) {
 				Controllers.getUserController().requestSelectList();
 			} else if(selectedMenu == 3) {

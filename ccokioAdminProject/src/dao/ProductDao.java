@@ -231,14 +231,14 @@ public class ProductDao {
 
 		try {
 
-			String sql = "select * from Product where productNumber = ?";
+			String sql = "select * from system.Product where productNumber = ?";
 			pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 			pstmt.setInt(1, searchProductNumber);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
 				searchProduct = new Product();
-				searchProduct.setProductNumber(rs.getInt("managerNumber"));
+				searchProduct.setProductNumber(rs.getInt("productNumber"));
 				searchProduct.setProductName(rs.getString("productName"));
 				searchProduct.setProductPrice(rs.getInt("productPrice"));
 				searchProduct.setProductCommant(rs.getString("productCommant"));
@@ -266,7 +266,7 @@ public class ProductDao {
 
 		try {
 
-			String sql = "delete from Product where managerNumber = ?";
+			String sql = "delete from Product where productNumber = ?";
 			pstmt = Controllers.getProgramController().getConnection().prepareStatement(sql);
 			pstmt.setInt(1, searchProductNumber);
 			result = pstmt.executeUpdate();

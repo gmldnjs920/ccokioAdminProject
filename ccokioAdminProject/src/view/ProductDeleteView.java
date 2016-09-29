@@ -33,7 +33,7 @@ public class ProductDeleteView {
 			Controllers.getProductController().requestReturnDelete(searchProductNumer);
 		} else {
 			System.out.println("제품삭제를 취소했습니다.");
-			Controllers.getProductController().requestSelectMenuList();
+			Controllers.getProductController().requestProductSelectList();
 		}
 	}
 	

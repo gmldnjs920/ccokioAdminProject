@@ -60,6 +60,7 @@ public class ProductController {
 
 		} else {
 			new AlertView().alert("존재하지 않는 제품입니다.");
+			Controllers.getProductController().requestProductSelectList();
 		}
 
 	}
@@ -97,8 +98,8 @@ public class ProductController {
 //제품 수정 
 	public void requestUpdateSearchNumber() {
 
-		ManagerUpdateView managerUpdateView = new ManagerUpdateView();
-		managerUpdateView.getSearchManagerNumber();
+		ProductUpdateView productUpdateView = new ProductUpdateView();
+		productUpdateView.getSearchProductNumber();
 
 	}
 
@@ -162,7 +163,7 @@ public class ProductController {
 		} else {
 			new AlertView().alert("제품삭제를 실패했습니다.");
 		}
-		Controllers.getProductController().requestSelectMenuList();
+		Controllers.getProductController().requestProductSelectList();
 	}
 
 }

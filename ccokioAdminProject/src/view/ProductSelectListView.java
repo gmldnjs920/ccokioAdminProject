@@ -39,25 +39,17 @@ public class ProductSelectListView {
 
 		while (true) {
 			System.out.println("제품관리모드입니다");
-			System.out.println("1. 제품등록 || 2. 제품수정 || 3. 제품삭제 || 4. 제품조회  || 5. 나가기");
+			System.out.println("1. 제품등록 || 2. 제품조회 || 3. 제품수정 || 4. 제품삭제  || 5. 나가기");
 			int selectedMenu = keyboard.nextInt();
 
 			if (selectedMenu == 1) {
-
 				Controllers.getProductController().requestProductRegister();
-
 			} else if (selectedMenu == 2) {
-
-				Controllers.getProductController().requestUpdateSearchNumber();
-
-			} else if (selectedMenu == 3) {
-
-				Controllers.getProductController().requestDeleteSearchNumber();
-
-			} else if (selectedMenu == 4) {
-
 				Controllers.getProductController().requestProductSelectOne();
-
+			} else if (selectedMenu == 3) {
+				Controllers.getProductController().requestUpdateSearchNumber();
+			} else if (selectedMenu == 4) {
+				Controllers.getProductController().requestDeleteSearchNumber();
 			} else if (selectedMenu == 5) {
 				Controllers.getLoginController().requestCheckLogin();
 				break;

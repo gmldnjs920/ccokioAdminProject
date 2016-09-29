@@ -54,21 +54,25 @@ public class ProductUpdateView {
 			searchProduct.setProductPrice(productPrice);
 			Controllers.getProductController().requestReturnUpdate(searchProduct, selectedMenu);
 
-		}  else if(selectedMenu == 3) {
+		} else if(selectedMenu == 3) {
 
 			System.out.print("제품 설명 : ");
 			String productCommant = keyboard.next();
 			searchProduct.setProductCommant(productCommant);
 			Controllers.getProductController().requestReturnUpdate(searchProduct, selectedMenu);
 
-		}  else if(selectedMenu == 4) {
+		} else if(selectedMenu == 4) {
 
 			System.out.print("제조사 : ");
 			String productOrigin = keyboard.next();
 			searchProduct.setProductOrigin(productOrigin);
 			Controllers.getProductController().requestReturnUpdate(searchProduct, selectedMenu);
 
-		} else {
+		} else if(selectedMenu == 5) {
+
+			Controllers.getProductController().requestProductSelectList();
+
+		}else {
 			System.out.println("메뉴를 다시 입력해주세요.");
 	
 			Controllers.getProductController().requestReturnSelectOne(selectedMenu);
