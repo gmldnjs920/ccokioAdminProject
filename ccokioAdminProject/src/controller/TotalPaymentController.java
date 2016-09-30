@@ -32,7 +32,7 @@ public class TotalPaymentController {
 		totalPaymentSelectListView.totalPaymentSelectMenuList();
 
 	}
-
+	// 회원 결제내역
 	public void requestSelectPaymentUserList() {
 
 		ArrayList<TotalPayment> totalPaymentList = totalPaymentDao.totalPaymentSelectList();
@@ -48,7 +48,7 @@ public class TotalPaymentController {
 		totalPaymentSelectListView.userPaymentSelectMenuList();
 
 	}
-
+	// 비회원 결제내역
 	public void requestSelectPaymentNonUserList() {
 
 		ArrayList<TotalPayment> totalPaymentList = totalPaymentDao.totalPaymentSelectList();
