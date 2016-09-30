@@ -13,7 +13,7 @@ import repository.LoginRepository;
 
 public class UserOrderDao {
 
-	public ArrayList<UserOrder> orderList(User searchUser) {
+	public ArrayList<UserOrder> userOrderList(User searchUser) {
 	
 		ArrayList<UserOrder> userOrders = new ArrayList<UserOrder>();
 
